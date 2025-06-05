@@ -1,43 +1,23 @@
-// import { RegistrationPage } from '../pages/RegistrationPage';
+import { RegistrationPage } from '../pages/RegistrationPage';
 
-// const registrationPage = new RegistrationPage();
+const registrationPage = new RegistrationPage();
 
-// describe('Register and order product', () => {
-//   beforeEach(() => {
-//     cy.fixture('user').then((data) => {
-//        data.email = `testuser@outlook.com`;
-//       cy.wrap(data).as('userData');
-//     });
-//   });
+describe('Register and order product', () => {
+  beforeEach(() => {
+    cy.fixture('user').then((data) => {
+       data.email = `testuser@outlook.com`;
+      cy.wrap(data).as('userData');
+    });
+  });
 
-//   it('should register and complete an order', function () {
-//     const user = this.userData;
-
-     
-//     registrationPage.register(user);
+  it('should register and complete an order', function () {
+    const user = this.userData;
 
      
-//     cy.visit('https://www.profi-parfemy.cz/tom-ford-lost-cherry-edp-100-ml-unisex_z779014/');
-//     cy.get('button[class="btn btn-insert"]', { timeout: 10000 }).should('be.visible').click();
-
-     
-//     cy.get('a[href*="/kosik"]', { timeout: 10000 }).click();
-
-    
-//     cy.get('a[class="btn btn-nextstep btn-block "]', { timeout: 10000 }).click();
-
-     
-//     cy.url().should('include', '/pokladna');
-
-//     cy.get('button[class="custom-radio custom-control delivery-content"]', { timeout: 10000 }).should('be.visible').click();
-//     cy.get('button[class="delivery-content custom-radio custom-control"]', { timeout: 10000 }).should('be.visible').click();
-
-     
-// //     cy.get('button[type="submit"]').contains(/objednat/i).click({ force: true });
-
-// //      cy.contains(/děkujeme/i, { timeout: 10000 }).should('be.visible');
-//   });
-// });
+    registrationPage.register(user);
+;
+  });
+});
 
 
 

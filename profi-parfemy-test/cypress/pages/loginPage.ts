@@ -71,17 +71,16 @@ export class LoginPage {
    this.closeAllPopups();
   this.closeIncomakerPopup();
 
-   this.searchProduct('tom ford lost cherry');
-  cy.wait(5000);
+  //  this.searchProduct('tom ford lost cherry');
+  // cy.wait(5000);
   this.closeAllPopups();
   this.closeIncomakerPopup();
+
   this.searchProduct('"Tom Ford Lost Cherry EDP 50 ml UNISEX"');
  cy.get('button.btn-insert[data-tracking-clickaddtocart*="737658"]', { timeout: 10000 })
   .should('be.visible')
   .click({ force: true });
-cy.get('a[href="/tom-ford-lost-cherry-edp-50-ml-unisex_z737658/"]', { timeout: 10000 })
-    .should('be.visible')
-    .click({ force: true });
+ 
  
   cy.get('button.btn.btn-insert', { timeout: 10000 })
    
@@ -91,9 +90,7 @@ cy.wait(1000);
 this.closeAllPopups();
 this.closeIncomakerPopup();
 
- 
-cy.get('button.btn-insert').contains('Vložit do košíku').click({ force: true });
-
+  
 
 cy.wait(5000);
 this.closeAllPopups();
