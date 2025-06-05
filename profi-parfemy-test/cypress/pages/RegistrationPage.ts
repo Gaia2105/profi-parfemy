@@ -7,9 +7,7 @@ export class RegistrationPage {
      
     cy.get('div.focus-cookiebara.active', { timeout: 3000 })
       .invoke('hide')
-      
-
-     
+           
     cy.get('#login', { timeout: 3000 })
       .invoke('hide')
       
@@ -27,47 +25,47 @@ export class RegistrationPage {
     })
   }
 
-  getEmailInput() {
+getEmailInput() {
     return cy.get('input[data-bv-field="email"]');
   }
 
-  getPasswordInput() {
+getPasswordInput() {
     return cy.get('input[data-bv-field="password"]');
   }
 
-  getGenderSelect() {
+getGenderSelect() {
     return cy.get('select[id="gender"]');
   }
 
-  getBirthDateInput() {
+getBirthDateInput() {
     return cy.get('input[name="birthdate"]');
   }
 
-  getFirstNameInput() {
+getFirstNameInput() {
     return cy.get('input[data-bv-field="name"]');
   }
 
-  getLastNameInput() {
+getLastNameInput() {
     return cy.get('input[data-bv-field="surname"]');
   }
 
-  getPhoneInput() {
+getPhoneInput() {
     return cy.get('input[data-bv-field="phone"]');
   }
 
-  getAddressInput() {
+getAddressInput() {
     return cy.get('input[data-bv-field="street"]');
   }
 
-  getCityInput() {
+getCityInput() {
     return cy.get('input[data-bv-field="city"]');
   }
 
-  getZipInput() {
+getZipInput() {
     return cy.get('input[data-bv-field="zip"]');
   }
 
-  getCountrySelect() {
+getCountrySelect() {
     return cy.get('select[id="country"]');
   }
 getPrivacyCheckbox1() {
@@ -79,7 +77,7 @@ getSubmitButton() {
 
 }
 
-  getPrivacyCheckbox() {
+getPrivacyCheckbox() {
     return cy.get('input[data-cookie-bar="simpleAccept"]');
   }
 
@@ -94,8 +92,8 @@ getSubmitButton() {
     address: string,
     city: string,
     zip: string,
-   
-  }) {
+  })
+   {
     this.visit();
     this.closePopups();
 
@@ -116,16 +114,12 @@ getSubmitButton() {
     this.closePopups(); 
     this.getZipInput().clear({ force: true }).type(user.zip, { force: true });
 
-     
     this.closeIncomakerPopup();  
     this.closePopups(); this.getSubmitButton().click({ force: true });
     this.closeIncomakerPopup();  
     this.closePopups();   
      
-
-    this.closeIncomakerPopup();  
-    this.closePopups(); {
-     
+ {
     cy.get('div.focus-cookiebara.active', { timeout: 3000 })
       .invoke('hide')
         }
@@ -133,12 +127,11 @@ getSubmitButton() {
       .invoke('hide') 
     
     this.closeIncomakerPopup();
-     
-     
-  this.closePopups();
-  this.closeIncomakerPopup();
+
+    this.closePopups();
+    
   }
-    }
+  }
 
 
 

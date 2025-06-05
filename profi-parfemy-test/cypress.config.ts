@@ -5,7 +5,7 @@ export default defineConfig({
     baseUrl: 'https://www.profi-parfemy.cz',
     projectId: "wtpxy4",
     setupNodeEvents(on, config) {
-      // events, если нужны
+       
     }
   },
   env: {

@@ -41,7 +41,7 @@ export class LoginPage {
   }
 
   searchProduct(query: string) {
-    this.closeAllPopups(); 
+  this.closeAllPopups(); 
     cy.get('input[name="search"]', { timeout: 10000 })
       .clear({ force: true })
       .type(query + '{enter}', { force: true });
@@ -68,47 +68,44 @@ export class LoginPage {
 
   cy.get('body', { timeout: 10000 }).should('contain.text', 'Můj účet');
 
-   this.closeAllPopups();
+  this.closeAllPopups();
   this.closeIncomakerPopup();
 
-  //  this.searchProduct('tom ford lost cherry');
-  // cy.wait(5000);
+
   this.closeAllPopups();
   this.closeIncomakerPopup();
 
   this.searchProduct('"Tom Ford Lost Cherry EDP 50 ml UNISEX"');
- cy.get('button.btn-insert[data-tracking-clickaddtocart*="737658"]', { timeout: 10000 })
-  .should('be.visible')
-  .click({ force: true });
- 
- 
+  cy.get('button.btn-insert[data-tracking-clickaddtocart*="737658"]', { timeout: 10000 })
+    .should('be.visible')
+    .click({ force: true });
+
   cy.get('button.btn.btn-insert', { timeout: 10000 })
    
   cy.contains('Tom Ford Lost Cherry EDP 50 ml UNISEX').click({ force: true });
 
-cy.wait(1000);
-this.closeAllPopups();
-this.closeIncomakerPopup();
-
+  cy.wait(1000);
   
+  this.closeAllPopups();
+  this.closeIncomakerPopup();
+     cy.wait(5000);
+  this.closeAllPopups();
+  this.closeIncomakerPopup();
 
-cy.wait(5000);
-this.closeAllPopups();
-this.closeIncomakerPopup();
+  cy.get('a.btn.btn-block.btn-primary', { timeout: 10000 }).click({ force: true });
+  cy.wait(1000);
 
-cy.get('a.btn.btn-block.btn-primary', { timeout: 10000 }).click({ force: true });
- cy.wait(1000);
-this.closeAllPopups();
-this.closeIncomakerPopup();
+  this.closeAllPopups();
+  this.closeIncomakerPopup();
 
-cy.get('button[name="OrderNext"]', { timeout: 10000 })
-  
-  .click({ force: true });
-cy.get('label[for="del10"]').click({ force: true });
-cy.get('label[for="pay2"]').click({ force: true });
-cy.get('button[name="OrderNext"].btn-nextstep')
+  cy.get('button[name="OrderNext"]', { timeout: 10000 })
+   .click({ force: true });
+  cy.get('label[for="del10"]').click({ force: true });
+  cy.get('label[for="pay2"]').click({ force: true });
+  cy.get('button[name="OrderNext"].btn-nextstep')
    
   .click({ force: true });
+
   this.closeAllPopups();
   this.closeIncomakerPopup();
 // cy.get('button[name="SubmitOrder"].btn-nextstep.last', { timeout: 10000 })
